@@ -1,0 +1,1 @@
+<template><q-page class="pt-28"><div class="text-center">Wypożyczalnia – komponent pełny zawartości</div></q-page></template>

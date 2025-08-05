@@ -1,0 +1,1 @@
+<template><div>RentalCard</div></template><script setup>defineProps(['title','details','price'])</script>
