@@ -1,135 +1,192 @@
 <template>
-  <q-page padding class="max-w-5xl mx-auto pt-24">
-    <h1 class="text-4xl font-bold text-blue-700 mb-8 text-center">
-      Wypożyczalnia lawet, przyczep i busów
-    </h1>
+  <div>
+    <section class="loaning-section q-pa-xl">
+      <h1 class="text-h4 text-primary text-center q-mb-md">
+        Wypożyczalnia lawet, przyczep i busów
+      </h1>
+      <div class="text-subtitle1 text-center q-mb-xl text-grey-8">
+        Nowoczesna flota – elastyczne warunki – atrakcyjne ceny.<br>
+        Wszystkie pojazdy i przyczepy regularnie serwisowane i dostępne od ręki!
+      </div>
 
-    <p class="mb-6 text-gray-700 text-center max-w-3xl mx-auto">
-      Oferujemy szeroki wybór sprzętu do wynajmu – od przyczep i lawet po busy osobowe i towarowe.
-      Wszystkie pojazdy i przyczepy są regularnie serwisowane i w pełni sprawne technicznie,
-      gotowe do natychmiastowego użytku.
-    </p>
+      <!-- Pierwszy rząd: Lawety & Przyczepy -->
+      <div class="row q-col-gutter-lg q-mb-xl items-stretch">
+        <div class="col-12 col-md-6">
+          <q-card flat class="offer-card full-height">
+            <div class="offer-header">
+              <q-icon name="local_shipping" color="primary" size="md" />
+              <span class="offer-title">Lawety <span class="category">(kat. B+E)</span></span>
+            </div>
+            <ul class="section-ul">
+              <li><b>Laweta 4 m</b> – DMC 2000 kg | Ład. 1430 kg | 400x200 cm <span class="price">100 zł / doba</span></li>
+              <li><b>Laweta 5 m</b> – DMC 3000 kg | Ład. 2280 kg | 500x210 cm <span class="price">150 zł / doba</span></li>
+              <li><b>Laweta na 2 auta</b> – DMC 3500 kg | Ład. 2520 kg | 850x210 cm <span class="price">200 zł / doba</span></li>
+              <li class="section-note">Wyposażone w najazdy, pasy, wyciągarki + opcja wynajmu z kierowcą.</li>
+            </ul>
+          </q-card>
+        </div>
 
-    <!-- Lawety -->
-    <section class="mb-10">
-      <h2 class="text-2xl font-semibold text-blue-600 mb-4 flex items-center">
-        <q-icon name="local_shipping" size="28px" class="mr-2 text-blue-600" />
-        Lawety (kat. B+E)
-      </h2>
+        <div class="col-12 col-md-6">
+          <q-card flat class="offer-card full-height">
+            <div class="offer-header">
+              <q-icon name="trailer" color="primary" size="md" />
+              <span class="offer-title">Przyczepy lekkie <span class="category">(kat. B)</span></span>
+            </div>
+            <ul class="section-ul">
+              <li><b>Lekka 1 oś</b> – DMC 750 kg | 242x123x128 cm <span class="price">50 zł / doba</span></li>
+              <li><b>Lekka 2 osie</b> – DMC 750 kg | 263x143x149 cm <span class="price">80 zł / doba</span></li>
+              <li><b>Lekka duża 2 osie</b> – DMC 750 kg | 340x143x170 cm <span class="price">100 zł / doba</span></li>
+              <li><b>Lekka 2 osie bez plandeki</b> – DMC 750 kg | 250x123 cm <span class="price">70 zł / doba</span></li>
+              <li class="section-note">Przyczepki z plandeką i bez, dostępne na godziny lub dni.</li>
+            </ul>
+          </q-card>
+        </div>
+      </div>
 
-      <div class="grid gap-6 md:grid-cols-3">
-        <CardItem
-          title="Laweta 4 m"
-          details="DMC: 2000 kg | Ładowność: 1430 kg | Długość: 400 cm | Szerokość: 200 cm"
-          price="100 zł / doba"
-          icon="directions_car"
-        />
-        <CardItem
-          title="Laweta 5 m"
-          details="DMC: 3000 kg | Ładowność: 2280 kg | Długość: 500 cm | Szerokość: 210 cm"
-          price="150 zł / doba"
-          icon="directions_car"
-        />
-        <CardItem
-          title="Laweta na 2 auta"
-          details="DMC: 3500 kg | Ładowność: 2520 kg | Długość: 850 cm | Szerokość: 210 cm"
-          price="200 zł / doba"
-          icon="directions_car"
-        />
+      <!-- Drugi rząd: Busy -->
+      <div class="row q-col-gutter-lg q-mb-xl items-stretch">
+        <div class="col-12 col-md-4">
+          <q-card flat bordered class="offer-card offer-card-bus full-height">
+            <div class="offer-header">
+              <q-icon name="directions_bus" color="primary" size="md" />
+              <span class="offer-title">Bus 9-osobowy</span>
+            </div>
+            <p>Wyjazdy rodzinne, integracyjne – komfort i bezpieczeństwo.</p>
+            <div class="price price-large">od 50 zł / doba</div>
+          </q-card>
+        </div>
+
+        <div class="col-12 col-md-4">
+          <q-card flat bordered class="offer-card offer-card-bus full-height">
+            <div class="offer-header">
+              <q-icon name="local_shipping" color="primary" size="md" />
+              <span class="offer-title">Autolaweta</span>
+            </div>
+            <p>Transport pojazdów i maszyn – przewozimy na życzenie klienta.</p>
+            <div class="price price-large">Ceny ustalane indywidualnie</div>
+          </q-card>
+        </div>
+
+        <div class="col-12 col-md-4">
+          <q-card flat bordered class="offer-card offer-card-bus full-height">
+            <div class="offer-header">
+              <q-icon name="local_shipping" color="primary" size="md" />
+              <span class="offer-title">Bus towarowy</span>
+            </div>
+            <p>Transport sprzętu, przeprowadzki. Wynajem krótko lub długoterminowy.</p>
+            <div class="price price-large">Indywidualna wycena</div>
+          </q-card>
+        </div>
+      </div>
+
+      <!-- Warunki wynajmu -->
+      <q-card flat class="warning-box q-mb-lg">
+        <div class="offer-header q-mb-sm">
+          <q-icon name="info" color="warning" size="19px" />
+          <span class="text-bold text-warning">Warunki wynajmu</span>
+        </div>
+        <ul class="section-ul section-ul-sm">
+          <li>Kaucja za przyczepę: <b>200 zł</b></li>
+          <li>Kaucja za samochód: <b>1000 zł</b></li>
+          <li>Dokument tożsamości i ważne prawo jazdy wymagane przy umowie</li>
+        </ul>
+      </q-card>
+
+      <!-- Godziny & Info -->
+      <div class="open-hours-bar q-pt-lg">
+        <q-icon name="access_time" color="secondary" size="18px" class="q-mr-xs" />
+        <b>Godziny otwarcia:</b> Poniedziałek – Sobota, 08:00 – 18:00
+      </div>
+      <div class="update-box q-mt-md text-caption text-grey-7">
+        <q-icon name="autorenew" color="primary" size="18px" class="q-mr-xs" spin />
+        Dynamicznie poszerzamy ofertę – zapytaj o szczegóły!
       </div>
     </section>
-
-    <!-- Przyczepy lekkie -->
-    <section class="mb-10">
-      <h2 class="text-2xl font-semibold text-blue-600 mb-4 flex items-center">
-        <q-icon name="local_shipping" size="28px" class="mr-2 text-blue-600" />
-        Przyczepy lekkie (kat. B)
-      </h2>
-
-      <div class="grid gap-6 md:grid-cols-4">
-        <CardItem
-          title="Lekka 1 oś"
-          details="DMC: 750 kg | Dł.: 242 cm | Szer.: 123 cm | Wys.: 128 cm"
-          price="50 zł / doba"
-          icon="directions_car_filled"
-        />
-        <CardItem
-          title="Lekka 2 osie"
-          details="DMC: 750 kg | Dł.: 263 cm | Szer.: 143 cm | Wys.: 149 cm"
-          price="80 zł / doba"
-          icon="directions_car_filled"
-        />
-        <CardItem
-          title="Lekka duża 2 osie"
-          details="DMC: 750 kg | Dł.: 340 cm | Szer.: 143 cm | Wys.: 170 cm"
-          price="100 zł / doba"
-          icon="directions_car_filled"
-        />
-        <CardItem
-          title="Lekka 2 osie bez plandeki"
-          details="DMC: 750 kg | Dł.: 250 cm | Szer.: 123 cm"
-          price="70 zł / doba"
-          icon="directions_car_filled"
-        />
-      </div>
-    </section>
-
-    <!-- Dodatkowe info -->
-    <section class="mb-10">
-      <h2 class="text-2xl font-semibold text-blue-600 mb-4 flex items-center">
-        <q-icon name="info" size="28px" class="mr-2 text-blue-600" />
-        Oferujemy również wynajem:
-      </h2>
-      <ul class="list-disc list-inside text-gray-700 text-lg max-w-md mx-auto">
-        <li>Busów 9-osobowych</li>
-        <li>Busów towarowych</li>
-        <li>Autolawet</li>
-      </ul>
-
-      <p class="mt-4 text-gray-700 text-center max-w-md mx-auto">
-        Ceny wynajmu samochodów ustalane są indywidualnie – <strong>od 50 zł / doba</strong>,
-        w zależności od rodzaju pojazdu i długości najmu.
-      </p>
-    </section>
-
-    <!-- Warunki wynajmu -->
-    <section class="mb-10 bg-blue-50 p-6 rounded-lg max-w-md mx-auto">
-      <h2 class="text-2xl font-semibold text-blue-600 mb-4 flex items-center">
-        <q-icon name="gavel" size="28px" class="mr-2 text-blue-600" />
-        Warunki wynajmu:
-      </h2>
-      <ul class="list-disc list-inside text-gray-700 text-lg">
-        <li>Kaucja za przyczepę: <strong>200 zł</strong></li>
-        <li>Kaucja za samochód: <strong>1000 zł</strong></li>
-        <li>Dokument tożsamości i ważne prawo jazdy wymagane przy podpisaniu umowy</li>
-      </ul>
-    </section>
-
-    <!-- Godziny otwarcia -->
-    <section class="text-center max-w-sm mx-auto">
-      <h3 class="text-xl font-semibold text-blue-600 mb-2 flex justify-center items-center">
-        <q-icon name="schedule" size="24px" class="mr-2" />
-        Godziny otwarcia wypożyczalni:
-      </h3>
-      <p class="text-gray-700 font-medium">Poniedziałek – Sobota: 08:00 – 18:00</p>
-    </section>
-  </q-page>
+  </div>
 </template>
 
-<script setup>
-
-// Komponent karty
-const CardItem = {
-  props: ['title', 'details', 'price', 'icon'],
-  template: `
-    <div
-      class="border border-gray-300 rounded-lg p-4 hover:shadow-lg transition-shadow cursor-default flex flex-col"
-    >
-      <q-icon :name="icon" size="36px" class="text-blue-600 mb-2" />
-      <h3 class="text-lg font-semibold mb-1">{{ title }}</h3>
-      <p class="text-gray-600 flex-grow">{{ details }}</p>
-      <p class="mt-4 text-blue-700 font-bold text-lg">{{ price }}</p>
-    </div>
-  `
+<style scoped lang="scss">
+.loaning-section {
+  background: #fff;
+  border-radius: 19px;
+  box-shadow: 0 2px 22px rgba(9, 54, 138, 0.08);
+  margin: 40px auto 0 auto;
+  max-width: 1500px;
 }
-</script>
+
+.offer-card {
+  background: #fefefe;
+  border-radius: 13px;
+  box-shadow: 0 4px 12px rgba(24, 103, 192, 0.08);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.full-height {
+  height: 100%;
+}
+
+.offer-header {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 1.2rem;
+  margin-bottom: 14px;
+}
+
+.offer-title {
+  font-weight: 700;
+  color: #0e47a1;
+}
+
+.category {
+  font-weight: 400;
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.section-ul {
+  padding-left: 18px;
+  margin: 0;
+  font-size: 1rem;
+  color: #234;
+  line-height: 1.65;
+}
+.section-ul-sm {
+  font-size: 0.95rem;
+}
+.section-ul li {
+  margin-bottom: 6px;
+}
+
+.section-note {
+  color: #1565c0;
+  font-size: 0.92em;
+  margin-top: 3px;
+}
+
+.price {
+  color: #c5a200;
+  font-weight: 700;
+}
+.price-large {
+  font-size: 1.1rem;
+  margin-top: auto;
+}
+
+.warning-box {
+  background: #fffde7;
+  border-left: 5px solid #fff176;
+  border-radius: 12px;
+  padding: 17px 20px 11px 20px;
+}
+
+.open-hours-bar {
+  font-size: 1.1rem;
+  color: #0e47a1;
+}
+.update-box {
+  display: flex;
+  align-items: center;
+}
+</style>

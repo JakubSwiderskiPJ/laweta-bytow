@@ -1,1 +1,6 @@
 @import 'quasar/src/css/index.sass';
+.q-tab .q-tab__label {
+  font-weight: bold;
+  font-size: 30px;
+  text-transform: uppercase;
+}

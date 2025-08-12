@@ -1,18 +1,8 @@
+// import IndexPage from 'src/pages/MainPage.vue'
+// import LoaningPage from 'src/pages/LoaningPage.vue'
+
 const routes = [
-  {
-    path: '/',
-    component: () => import('pages/MainPage.vue'),
-    children: [{ path: 'loaning', component: () => import('pages/LoaningPage.vue') },
-],
-
-  },
-
-  // Always leave this as last one,
-  // but you can also remove it
-  {
-    path: '/:catchAll(.*)*',
-    component: () => import('pages/ErrorNotFound.vue'),
-  },
+  // { path: '/', component: IndexPage },
+  // { path: '/wypozyczalnia', component: LoaningPage },
 ]
-
 export default routes
