@@ -1,4 +1,6 @@
 <template>
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet" />
+
   <div class="emergency-bar">
     POMOC DROGOWA –
     <span class="phone" @click="callHelp" tabindex="0" role="button" @keydown.enter="callHelp">
@@ -14,12 +16,14 @@ const callHelp = () => {
 </script>
 
 <style lang="scss" scoped>
+
 .emergency-bar {
   background: $primary;
   color: $warning;
   padding: 30px 0;
   text-align: center;
-  font-weight: bold;
+  font-family: 'Anton', sans-serif;
+  font-weight: 700;
   font-size: 3rem;
   letter-spacing: 0.05em;
 }

@@ -1,5 +1,7 @@
 <template>
   <div>
+        <CarouselSection />
+
     <section class="loaning-section q-pa-xl">
       <h1 class="text-h4 text-primary text-center q-mb-md">
         Wypożyczalnia lawet, przyczep i busów
@@ -21,7 +23,7 @@
               <li><b>Laweta 4 m</b> – DMC 2000 kg | Ład. 1430 kg | 400x200 cm <span class="price">100 zł / doba</span></li>
               <li><b>Laweta 5 m</b> – DMC 3000 kg | Ład. 2280 kg | 500x210 cm <span class="price">150 zł / doba</span></li>
               <li><b>Laweta na 2 auta</b> – DMC 3500 kg | Ład. 2520 kg | 850x210 cm <span class="price">200 zł / doba</span></li>
-              <li class="section-note">Wyposażone w najazdy, pasy, wyciągarki + opcja wynajmu z kierowcą.</li>
+              <li class="section-note">Wyposażone w najazdy, wyciągarki </li>
             </ul>
           </q-card>
         </div>
@@ -37,7 +39,7 @@
               <li><b>Lekka 2 osie</b> – DMC 750 kg | 263x143x149 cm <span class="price">80 zł / doba</span></li>
               <li><b>Lekka duża 2 osie</b> – DMC 750 kg | 340x143x170 cm <span class="price">100 zł / doba</span></li>
               <li><b>Lekka 2 osie bez plandeki</b> – DMC 750 kg | 250x123 cm <span class="price">70 zł / doba</span></li>
-              <li class="section-note">Przyczepki z plandeką i bez, dostępne na godziny lub dni.</li>
+              <li class="section-note">Przyczepki z plandeką i bez, dostępne do wypożyczenia <b>wyłącznie</b> na doby.</li>
             </ul>
           </q-card>
         </div>
@@ -74,7 +76,7 @@
               <span class="offer-title">Bus towarowy</span>
             </div>
             <p>Transport sprzętu, przeprowadzki. Wynajem krótko lub długoterminowy.</p>
-            <div class="price price-large">Indywidualna wycena</div>
+            <div class="price price-large">Ceny ustalane indywidualnie</div>
           </q-card>
         </div>
       </div>
@@ -190,3 +192,6 @@
   align-items: center;
 }
 </style>
+<script setup lang="ts">
+import CarouselSection from 'components/CarouselSection.vue'
+</script>

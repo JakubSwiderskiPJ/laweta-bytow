@@ -1,7 +1,10 @@
 <template>
     <CarouselSection />
 
-<MainPageCardComponent/>
+  <MainPageCardComponent/>
+
+  <MapSection style="margin: 0px 0px 30px 0px;" />
+
   <FooterSection/>
 </template>
 
@@ -9,6 +12,7 @@
 import CarouselSection from 'components/CarouselSection.vue'
 import MainPageCardComponent from 'components/MainPageCardComponent.vue'
 import FooterSection from 'components/FooterSection.vue'
+import MapSection from 'components/MapSection.vue'
 </script>
 
 <style lang="scss" scoped>

@@ -43,7 +43,8 @@
         </div>
         <div class="q-mt-sm text-caption">
           <q-icon name="access_time" size="16px" class="q-mr-sm" />
-          Pon – Sob: 08:00 – 18:00
+          Wypożyczalnia -  <b>Pon – Sob:   08:00 – 18:00</b> <br>
+          Pomoc drogowa <b>24</b> godziny na dobę <b>7</b> dni w tygodniu
         </div>
       </div>
 
