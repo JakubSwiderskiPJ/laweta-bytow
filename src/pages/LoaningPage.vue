@@ -1,7 +1,6 @@
 <template>
   <div>
-        <CarouselSection />
-
+<LoaningGallery/>
     <section class="loaning-section q-pa-xl">
       <h1 class="text-h4 text-primary text-center q-mb-md">
         Wypożyczalnia lawet, przyczep i busów
@@ -54,7 +53,7 @@
               <span class="offer-title">Bus 9-osobowy</span>
             </div>
             <p>Wyjazdy rodzinne, integracyjne – komfort i bezpieczeństwo.</p>
-            <div class="price price-large">od 50 zł / doba</div>
+            <div class="price price-large">Ceny ustalane indywidualnie</div>
           </q-card>
         </div>
 
@@ -64,7 +63,7 @@
               <q-icon name="local_shipping" color="primary" size="md" />
               <span class="offer-title">Autolaweta</span>
             </div>
-            <p>Transport pojazdów i maszyn – przewozimy na życzenie klienta.</p>
+            <p>Transport pojazdów i maszyn</p>
             <div class="price price-large">Ceny ustalane indywidualnie</div>
           </q-card>
         </div>
@@ -99,12 +98,22 @@
         <q-icon name="access_time" color="secondary" size="18px" class="q-mr-xs" />
         <b>Godziny otwarcia:</b> Poniedziałek – Sobota, 08:00 – 18:00
       </div>
+
       <div class="update-box q-mt-md text-caption text-grey-7">
         <q-icon name="autorenew" color="primary" size="18px" class="q-mr-xs" spin />
         Dynamicznie poszerzamy ofertę – zapytaj o szczegóły!
       </div>
+
+
+  <div class="vat-info q-mt-lg q-mb-lg">
+  <q-icon name="info" color="primary" size="20px" class="q-mr-sm" />
+  Wszystkie podane ceny są cenami netto – do których należy doliczyć podatek VAT 23%.
+</div>
     </section>
   </div>
+
+
+  <FooterSection/>
 </template>
 
 <style scoped lang="scss">
@@ -114,6 +123,17 @@
   box-shadow: 0 2px 22px rgba(9, 54, 138, 0.08);
   margin: 40px auto 0 auto;
   max-width: 1500px;
+}
+.vat-info {
+  background: #f8fafc;
+  color: #1867c0;
+  border-left: 4px solid #1976d2;
+  padding: 10px 18px;
+  border-radius: 7px;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  margin-top: 25px;
 }
 
 .offer-card {
@@ -194,4 +214,6 @@
 </style>
 <script setup lang="ts">
 import CarouselSection from 'components/CarouselSection.vue'
+import FooterSection from 'components/FooterSection.vue'
+import LoaningGallery from 'components/LoaningGallery.vue'
 </script>

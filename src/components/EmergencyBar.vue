@@ -1,5 +1,7 @@
 <template>
 <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 
   <div class="emergency-bar">
     POMOC DROGOWA –
@@ -22,9 +24,9 @@ const callHelp = () => {
   color: $warning;
   padding: 30px 0;
   text-align: center;
-  font-family: 'Anton', sans-serif;
+  font-family: 'Bebas Neue', Arial, sans-serif;
   font-weight: 700;
-  font-size: 3rem;
+  font-size: 4rem;
   letter-spacing: 0.05em;
 }
 .phone {

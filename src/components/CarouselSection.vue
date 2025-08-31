@@ -34,7 +34,7 @@ const slide = ref(1)
 // import lokalnych obrazów – podmień na swoje ścieżki
 import slide1 from 'assets/7.jpg'
 import slide2 from 'assets/laweta.jpg'
-import slide3 from 'assets/logo-chmielewski.svg'
+import slide3 from 'assets/images/P2.jpg'
 
 const images = [slide1, slide2, slide3]
 </script>

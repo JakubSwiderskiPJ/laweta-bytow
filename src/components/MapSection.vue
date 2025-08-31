@@ -2,7 +2,7 @@
 import { GoogleMap, AdvancedMarker } from 'vue3-google-map'
 import { ref, watch } from 'vue'
 
-const center = ref({ lat: 54.204812, lng: 17.534892 })
+const center = ref({ lat: 54.204856, lng: 17.534873 })
 
 // Domyślnie ustawiamy markerOptions rozpakowując wartość center.value
 const markerOptions = ref({
