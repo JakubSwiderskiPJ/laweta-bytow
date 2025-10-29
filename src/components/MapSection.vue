@@ -11,30 +11,32 @@ const markerOptions = ref({
   title: 'CHMIELEWSKI TRANSPORT'
 })
 
-// Jeśli center się zmieni, markerOptions.position też musi się zaktualizować
 watch(center, (newVal) => {
   markerOptions.value.position = newVal
 })
 
-const pinOptions = { background: '#FBBC04' }  // sprawdź czy obsługiwane, ewentualnie usuń
 </script>
 
 <template>
+
+
   <GoogleMap
     api-key="AIzaSyCyHNuZpx-HPfEqjt_Nf98vifPRmIOP1aY"
     mapId="DEMO_MAP_ID"
-    style="width: 100%; height: 400px"
+    style="width: 100%; height: 400px; "
+    class="map_container"
     :center="center"
     :zoom="15"
   >
-    <AdvancedMarker :options="markerOptions" :pin-options="pinOptions" />
-
-    <AdvancedMarker :options="markerOptions">
-      <template #content>
-        <div style="background: white; color: black; padding: 5px; border-radius: 5px">
-          Custom Content
-        </div>
-      </template>
-    </AdvancedMarker>
+    <AdvancedMarker :options="{ position: center, title: 'CHMIELEWSKI TRANSPORT' }" />
   </GoogleMap>
 </template>
+
+<style scoped>
+
+.map_container {
+  text-align: center;
+
+}
+
+</style>
