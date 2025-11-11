@@ -44,11 +44,31 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 
-import slide1 from 'assets/7.jpg'
-import slide2 from 'assets/laweta.jpg'
-import slide3 from 'assets/images/P2.jpg'
+import slide1 from 'assets/main-page-images/Filip12.jpg'
+import slide2 from 'assets/main-page-images/Filip13.jpg'
+import slide3 from 'assets/main-page-images/Filip14.jpg'
+import slide4 from 'assets/main-page-images/Filip15.jpg'
+import slide5 from 'assets/main-page-images/Filip16.jpg'
+import slide6 from 'assets/main-page-images/Filip17.jpg'
+import slide7 from 'assets/main-page-images/Filip18.jpg'
+import slide8 from 'assets/main-page-images/Filip33.jpg'
+import slide9 from 'assets/main-page-images/Filip34.jpg'
+import slide10 from 'assets/main-page-images/Filip35.jpg'
+import slide11 from 'assets/main-page-images/Filip36.jpg'
+import slide12 from 'assets/main-page-images/Filip37.jpg'
+import slide13 from 'assets/main-page-images/Filip38.jpg'
+import slide14 from 'assets/main-page-images/Filip49.jpg'
+import slide15 from 'assets/main-page-images/Filip50.jpg'
+import slide16 from 'assets/main-page-images/Filip51.jpg'
+import slide17 from 'assets/main-page-images/Filip54.jpg'
+import slide18 from 'assets/main-page-images/Filip55.jpg'
+import slide19 from 'assets/main-page-images/Filip56.jpg'
+import slide20 from 'assets/main-page-images/Filip57.jpg'
 
-const images = [slide1, slide2, slide3]
+const images = [slide1, slide2, slide3,
+  slide4, slide5, slide6, slide7, slide8, slide9, slide10, slide11,
+  slide12, slide13, slide14, slide15, slide16, slide17, slide18,
+  slide19, slide20,]
 const activeIndex = ref(0)
 let autoplayInterval = null
 
@@ -99,17 +119,17 @@ onUnmounted(() => {
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-  background: #000;
+  background: #1a1a1a;
 }
 
 .image-wrapper {
   position: relative;
   width: 100%;
   height: 0;
-  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  padding-bottom: 66.67%; /* 3:2 aspect ratio dla 1200x800 */
 
   @media (max-width: 768px) {
-    padding-bottom: 75%; /* 4:3 for mobile */
+    padding-bottom: 66.67%; /* Keep 3:2 on mobile too */
   }
 }
 
@@ -119,12 +139,8 @@ onUnmounted(() => {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-
-  &:hover {
-    transform: scale(1.02);
-  }
+  object-fit: contain; /* ZMIENIONE z cover na contain */
+  transition: transform 0.3s ease;
 }
 
 .overlay-gradient {
@@ -132,8 +148,8 @@ onUnmounted(() => {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 40%;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+  height: 30%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.4), transparent);
   pointer-events: none;
 }
 
@@ -231,7 +247,7 @@ onUnmounted(() => {
   position: relative;
   flex-shrink: 0;
   width: 180px;
-  height: 120px;
+  height: 120px; /* 3:2 aspect ratio (180 * 0.67) */
   border-radius: 12px;
   overflow: hidden;
   border: 3px solid transparent;
@@ -242,7 +258,7 @@ onUnmounted(() => {
 
   @media (max-width: 768px) {
     width: 120px;
-    height: 80px;
+    height: 80px; /* 3:2 aspect ratio (120 * 0.67) */
   }
 
   img {

@@ -17,7 +17,11 @@
 
       <!-- Services Grid -->
       <div class="services-grid">
-        <div class="service-card">
+        <div
+          ref="serviceCard1"
+          class="service-card animate-on-scroll"
+          :class="{ 'is-visible': visibleCards.card1 }"
+        >
           <div class="service-icon">
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
               <path d="M5 17H4a2 2 0 01-2-2V5a2 2 0 012-2h16a2 2 0 012 2v10a2 2 0 01-2 2h-1" stroke="currentColor" stroke-width="2"/>
@@ -28,7 +32,11 @@
           <p>Kompleksowa pomoc na terenie Bytowa, okolic i całej Europy</p>
         </div>
 
-        <div class="service-card">
+        <div
+          ref="serviceCard2"
+          class="service-card animate-on-scroll"
+          :class="{ 'is-visible': visibleCards.card2 }"
+        >
           <div class="service-icon">
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
               <path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z" stroke="currentColor" stroke-width="2"/>
@@ -39,7 +47,11 @@
           <p>Samochody osobowe, ciężarowe, maszyny budowlane i ładunki ponadgabarytowe</p>
         </div>
 
-        <div class="service-card">
+        <div
+          ref="serviceCard3"
+          class="service-card animate-on-scroll"
+          :class="{ 'is-visible': visibleCards.card3 }"
+        >
           <div class="service-icon">
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
               <path d="M9 11l3 3L22 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
@@ -116,14 +128,68 @@
       </div>
     </div>
   </div>
+
 </template>
 
 <script setup>
+import { ref, onMounted, onUnmounted } from 'vue'
+
+const serviceCard1 = ref(null)
+const serviceCard2 = ref(null)
+const serviceCard3 = ref(null)
+
+const visibleCards = ref({
+  card1: false,
+  card2: false,
+  card3: false
+})
+
+let observer = null
+
+onMounted(() => {
+  // Opcje dla Intersection Observer
+  const options = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.2 // 20% karty musi być widoczne
+  }
+
+  // Callback wywoływany gdy karta wchodzi/wychodzi z viewport
+  const callback = (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // Określ która karta jest widoczna
+        if (entry.target === serviceCard1.value) {
+          visibleCards.value.card1 = true
+        } else if (entry.target === serviceCard2.value) {
+          visibleCards.value.card2 = true
+        } else if (entry.target === serviceCard3.value) {
+          visibleCards.value.card3 = true
+        }
+      }
+    })
+  }
+
+  // Stwórz observer
+  observer = new IntersectionObserver(callback, options)
+
+  // Obserwuj wszystkie karty
+  if (serviceCard1.value) observer.observe(serviceCard1.value)
+  if (serviceCard2.value) observer.observe(serviceCard2.value)
+  if (serviceCard3.value) observer.observe(serviceCard3.value)
+})
+
+onUnmounted(() => {
+  // Wyczyść observer przy odmontowaniu
+  if (observer) {
+    observer.disconnect()
+  }
+})
 </script>
 
 <style scoped lang="scss">
 .main-card-wrapper {
-  max-width: 100%;
+  max-width: 1400px;
   margin: 60px auto;
   padding: 0 20px;
 
@@ -140,8 +206,9 @@
 .main-card {
   background: white;
   border-radius: 24px;
-  box-shadow: 0 8px 40px rgba(14, 71, 161, 0.08);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
   padding: 60px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
 
   @media (max-width: 1024px) {
     padding: 40px;
@@ -245,6 +312,33 @@
 
   @media (max-width: 768px) {
     padding: 24px 20px;
+  }
+}
+
+// Animacja wyskakiwania dla mobile
+.animate-on-scroll {
+  @media (max-width: 1024px) {
+    opacity: 0;
+    transform: translateY(50px) scale(0.9);
+    transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+    &.is-visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    // Opóźnienia dla efektu kaskadowego
+    &:nth-child(1).is-visible {
+      transition-delay: 0.1s;
+    }
+
+    &:nth-child(2).is-visible {
+      transition-delay: 0.2s;
+    }
+
+    &:nth-child(3).is-visible {
+      transition-delay: 0.3s;
+    }
   }
 }
 
@@ -460,6 +554,38 @@
 
   @media (max-width: 768px) {
     font-size: 1rem;
+  }
+}
+.notice-card {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 24px;
+  border-radius: 16px;
+  font-size: 1rem;
+  background: white;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+
+  svg {
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 0.95rem;
+    padding: 14px 16px;
+  }
+}
+.vat-notice {
+  border-left: 5px solid #ffc107;
+
+  svg {
+    color: #ffc107;
+  }
+
+  span {
+    color: #555;
+    font-weight: 500;
   }
 }
 </style>
