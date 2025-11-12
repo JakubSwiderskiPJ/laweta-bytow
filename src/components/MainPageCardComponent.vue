@@ -99,7 +99,7 @@
               <path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
             </svg>
           </div>
-          <span>Ubezpieczenie przewoźnika drogowego (OCP)</span>
+          <span>Ubezpieczenie przewoźnika drogowego (OCP) na kwotę 500.000zł</span>
         </div>
         <div class="feature-item">
           <div class="check-icon">

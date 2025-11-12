@@ -2,18 +2,22 @@
   <div class="emergency-bar-wrapper">
     <div class="emergency-bar">
       <div class="emergency-content">
+        <!-- Logo absolutnie po lewej -->
+        <div class="logo-container">
+          <img :src="logo" alt="Chmielewski Transport" class="company-logo" />
+        </div>
 
-
+        <!-- Tekst i przycisk centralnie -->
         <div class="emergency-text">
           <div class="emergency-label">POMOC DROGOWA 24/7</div>
-          <a href="tel:+48 535 255 605" class="phone-button" @click="trackCall">
+          <a href="tel:+48535255605" class="phone-button" @click="trackCall">
             <div class="phone-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                 <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </div>
             <div class="phone-content">
-              <span class="phone-number">+48 535 255 605</span>
+              <span class="phone-number">535 255 605</span>
               <span class="phone-cta">Kliknij i zadzwoń</span>
             </div>
             <div class="phone-arrow">
@@ -29,8 +33,9 @@
 </template>
 
 <script setup>
+import logo from 'assets/logo-chmielewski.svg'
+
 const trackCall = () => {
-  // Opcjonalnie: możesz tutaj dodać tracking
   console.log('Użytkownik kliknął numer telefonu')
 }
 </script>
@@ -65,72 +70,73 @@ const trackCall = () => {
 .emergency-bar {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 25px 20px;
+  position: relative;
 
   @media (max-width: 768px) {
-    padding: 30px 16px;
+    padding: 20px 16px;
   }
 }
 
 .emergency-content {
+  position: relative;
   display: flex;
-  align-items: center;
   justify-content: center;
-  gap: 32px;
+  align-items: center;
+  min-height: 100px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     flex-direction: column;
-    gap: 20px;
+    gap: 24px;
+    min-height: auto;
   }
 }
 
-.emergency-icon {
-  width: 80px;
-  height: 80px;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  flex-shrink: 0;
+// Logo absolutnie po lewej
+.logo-container {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
 
-  @media (max-width: 768px) {
-    width: 64px;
-    height: 64px;
-
-    svg {
-      width: 40px;
-      height: 40px;
-    }
+  @media (max-width: 1024px) {
+    position: relative;
+    transform: none;
+    left: auto;
+    top: auto;
   }
 }
 
-.pulse {
-  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+.company-logo {
+  height: 1000px;
+  width: auto;
+  max-width: 250px;
+  object-fit: contain;
+  filter: brightness(0) invert(1) drop-shadow(0 2px 8px rgba(0, 0, 0, 0.2));
+
+  @media (max-width: 1024px) {
+    height: 50px;
+    max-width: 150px;
+  }
+
+  @media (max-width: 480px) {
+    height: 40px;
+    max-width: 120px;
+  }
 }
 
-@keyframes pulse {
-  0%, 100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.8;
-    transform: scale(1.05);
-  }
-}
-
+// Tekst i przycisk zawsze na środku
 .emergency-text {
   display: flex;
   flex-direction: column;
   gap: 12px;
-    align-items: center;
-    text-align: center;
-  @media (max-width: 768px) {
-    align-items: center;
-    text-align: center;
+  align-items: center;
+  text-align: center;
+  z-index: 2;
+
+  @media (max-width: 1024px) {
+    width: 100%;
   }
 }
 
@@ -140,7 +146,6 @@ const trackCall = () => {
   color: white;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  align-items: center;
 
   @media (max-width: 768px) {
     font-size: 1rem;

@@ -44,30 +44,23 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 
-import slide1 from 'assets/main-page-images/Filip12.jpg'
 import slide2 from 'assets/main-page-images/Filip13.jpg'
-import slide3 from 'assets/main-page-images/Filip14.jpg'
 import slide4 from 'assets/main-page-images/Filip15.jpg'
 import slide5 from 'assets/main-page-images/Filip16.jpg'
 import slide6 from 'assets/main-page-images/Filip17.jpg'
-import slide7 from 'assets/main-page-images/Filip18.jpg'
 import slide8 from 'assets/main-page-images/Filip33.jpg'
 import slide9 from 'assets/main-page-images/Filip34.jpg'
-import slide10 from 'assets/main-page-images/Filip35.jpg'
 import slide11 from 'assets/main-page-images/Filip36.jpg'
 import slide12 from 'assets/main-page-images/Filip37.jpg'
 import slide13 from 'assets/main-page-images/Filip38.jpg'
 import slide14 from 'assets/main-page-images/Filip49.jpg'
 import slide15 from 'assets/main-page-images/Filip50.jpg'
-import slide16 from 'assets/main-page-images/Filip51.jpg'
-import slide17 from 'assets/main-page-images/Filip54.jpg'
-import slide18 from 'assets/main-page-images/Filip55.jpg'
 import slide19 from 'assets/main-page-images/Filip56.jpg'
 import slide20 from 'assets/main-page-images/Filip57.jpg'
 
-const images = [slide1, slide2, slide3,
-  slide4, slide5, slide6, slide7, slide8, slide9, slide10, slide11,
-  slide12, slide13, slide14, slide15, slide16, slide17, slide18,
+const images = [ slide2,
+  slide4, slide5, slide6, slide8, slide9, slide11,
+  slide12, slide13, slide14, slide15,
   slide19, slide20,]
 const activeIndex = ref(0)
 let autoplayInterval = null

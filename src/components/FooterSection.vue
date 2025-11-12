@@ -19,26 +19,21 @@
           </p>
         </div>
 
-        <!-- Kolumna 2: Szybkie linki -->
-        <div class="footer-column">
-          <h4 class="column-title">Szybkie linki</h4>
-          <nav class="footer-links">
-            <a href="#main" class="footer-link" @click.prevent="$emit('go', 'main')">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" stroke="currentColor" stroke-width="2"/>
-                <path d="M9 22V12h6v10" stroke="currentColor" stroke-width="2"/>
-              </svg>
-              <span>Strona główna</span>
-            </a>
-            <a href="#loaning" class="footer-link" @click.prevent="$emit('go', 'loaning')">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                <path d="M5 17H4a2 2 0 01-2-2V5a2 2 0 012-2h16a2 2 0 012 2v10a2 2 0 01-2 2h-1" stroke="currentColor" stroke-width="2"/>
-                <path d="M5 17a2 2 0 104 0 2 2 0 00-4 0zM15 17a2 2 0 104 0 2 2 0 00-4 0z" stroke="currentColor" stroke-width="2"/>
-              </svg>
-              <span>Wypożyczalnia</span>
-            </a>
-          </nav>
-        </div>
+<!-- Kolumna 2: Facebook -->
+<div class="footer-column">
+  <h4 class="column-title">Znajdź nas na Facebooku</h4>
+  <a href="https://www.facebook.com/pomocdrogowabytow" target="_blank" rel="noopener noreferrer" class="facebook-button">
+    <div class="facebook-icon">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+      </svg>
+    </div>
+    <div class="facebook-content">
+      <div class="facebook-title">Laweta Bytów</div>
+      <div class="facebook-subtitle">Odwiedź naszą stronę</div>
+    </div>
+  </a>
+</div>
 
         <!-- Kolumna 3: Kontakt -->
         <div class="footer-column">
@@ -375,5 +370,54 @@ defineEmits(['go'])
   font-size: 0.9rem;
   color: rgba(255, 255, 255, 0.7);
   margin: 0;
+}
+
+.facebook-button {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(66, 103, 178, 0.3);
+
+  &:hover {
+    background: #4267B2;
+    border-color: #4267B2;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(66, 103, 178, 0.3);
+    color: white;
+  }
+}
+
+.facebook-icon {
+  width: 48px;
+  height: 48px;
+  background: #4267B2;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-shrink: 0;
+}
+
+.facebook-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.facebook-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.facebook-subtitle {
+  font-size: 0.85rem;
+  opacity: 0.8;
 }
 </style>
