@@ -25,11 +25,12 @@
     </div>
 
     <!-- Thumbnail Gallery -->
-    <div class="thumbnail-gallery">
+    <div class="thumbnail-gallery" ref="thumbnailGallery">
       <div class="thumbnails-container">
         <button
           v-for="(img, index) in images"
           :key="index"
+          :ref="el => { if (el) thumbnailRefs[index] = el }"
           @click="activeIndex = index"
           :class="['thumbnail', { active: activeIndex === index }]"
         >
@@ -42,7 +43,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted, watch, nextTick } from 'vue'
 
 import slide2 from 'assets/main-page-images/Filip13.jpg'
 import slide4 from 'assets/main-page-images/Filip15.jpg'
@@ -58,19 +59,70 @@ import slide15 from 'assets/main-page-images/Filip50.jpg'
 import slide19 from 'assets/main-page-images/Filip56.jpg'
 import slide20 from 'assets/main-page-images/Filip57.jpg'
 
-const images = [ slide2,
-  slide4, slide5, slide6, slide8, slide9, slide11,
-  slide12, slide13, slide14, slide15,
-  slide19, slide20,]
-const activeIndex = ref(0)
-let autoplayInterval = null
-
-const nextSlide = () => {
-  activeIndex.value = (activeIndex.value + 1) % images.length
+// Funkcja do losowego tasowania tablicy
+const shuffleArray = (array) => {
+  const shuffled = [...array]
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]]
+  }
+  return shuffled
 }
 
+// Oryginalna tablica zdjęć
+const originalImages = [
+  slide2, slide4, slide5, slide6, slide8, slide9, slide11,
+  slide12, slide13, slide14, slide15, slide19, slide20
+]
+
+// Wymieszane zdjęcia przy załadowaniu strony
+const images = shuffleArray(originalImages)
+
+const activeIndex = ref(0)
+const thumbnailGallery = ref(null)
+const thumbnailRefs = ref([])
+let autoplayInterval = null
+
+// Funkcja do przewijania do aktywnego thumbnaiła
+const scrollToActiveThumbnail = () => {
+  nextTick(() => {
+    const activeThumbnail = thumbnailRefs.value[activeIndex.value]
+    const gallery = thumbnailGallery.value
+
+    if (activeThumbnail && gallery) {
+      const thumbnailRect = activeThumbnail.getBoundingClientRect()
+      const galleryRect = gallery.getBoundingClientRect()
+
+      // Oblicz pozycję do przewinięcia (wyśrodkuj thumbnail)
+      const scrollLeft = activeThumbnail.offsetLeft - (gallery.clientWidth / 2) + (thumbnailRect.width / 2)
+
+      // Płynne przewijanie
+      gallery.scrollTo({
+        left: scrollLeft,
+        behavior: 'smooth'
+      })
+    }
+  })
+}
+
+// Autoplay pokazuje LOSOWE zdjęcie (różne od aktualnego)
+const nextSlide = () => {
+  let newIndex
+  do {
+    newIndex = Math.floor(Math.random() * images.length)
+  } while (newIndex === activeIndex.value && images.length > 1)
+
+  activeIndex.value = newIndex
+}
+
+// Poprzednie też losowe (różne od aktualnego)
 const prevSlide = () => {
-  activeIndex.value = (activeIndex.value - 1 + images.length) % images.length
+  let newIndex
+  do {
+    newIndex = Math.floor(Math.random() * images.length)
+  } while (newIndex === activeIndex.value && images.length > 1)
+
+  activeIndex.value = newIndex
 }
 
 const startAutoplay = () => {
@@ -85,8 +137,14 @@ const stopAutoplay = () => {
   }
 }
 
+// Watch activeIndex i przewijaj do aktywnego thumbnaiła
+watch(activeIndex, () => {
+  scrollToActiveThumbnail()
+})
+
 onMounted(() => {
   startAutoplay()
+  scrollToActiveThumbnail() // Początkowe przewinięcie
 })
 
 onUnmounted(() => {
@@ -132,7 +190,7 @@ onUnmounted(() => {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: contain; /* ZMIENIONE z cover na contain */
+  object-fit: contain;
   transition: transform 0.3s ease;
 }
 
@@ -207,6 +265,7 @@ onUnmounted(() => {
   -webkit-overflow-scrolling: touch;
   scrollbar-width: thin;
   scrollbar-color: #ccc transparent;
+  scroll-behavior: smooth; // Dodano dla płynnego przewijania
 
   &::-webkit-scrollbar {
     height: 6px;
@@ -240,7 +299,7 @@ onUnmounted(() => {
   position: relative;
   flex-shrink: 0;
   width: 180px;
-  height: 120px; /* 3:2 aspect ratio (180 * 0.67) */
+  height: 120px;
   border-radius: 12px;
   overflow: hidden;
   border: 3px solid transparent;
@@ -251,7 +310,7 @@ onUnmounted(() => {
 
   @media (max-width: 768px) {
     width: 120px;
-    height: 80px; /* 3:2 aspect ratio (120 * 0.67) */
+    height: 80px;
   }
 
   img {

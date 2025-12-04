@@ -17,8 +17,73 @@
     <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png" />
     <link rel="icon" type="image/ico" href="favicon.ico" />
+
+    <!-- Google Consent Mode v2 - MUSI BYĆ PRZED GTM -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+
+      // Domyślne ustawienia zgód (przed akceptacją cookies)
+      gtag('consent', 'default', {
+        'analytics_storage': 'denied',
+        'functionality_storage': 'denied',
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied',
+        'wait_for_update': 500
+      });
+
+      // Sprawdź czy użytkownik już wyraził zgodę
+      const savedConsent = localStorage.getItem('cookie_consent');
+      if (savedConsent) {
+        const preferences = JSON.parse(savedConsent);
+
+        gtag('consent', 'update', {
+          'analytics_storage': preferences.analytics ? 'granted' : 'denied',
+          'functionality_storage': preferences.functional ? 'granted' : 'denied',
+          'ad_storage': 'denied',
+          'ad_user_data': 'denied',
+          'ad_personalization': 'denied'
+        });
+      }
+    </script>
+
+    <!-- Google Tag Manager - ŁADUJE SIĘ TYLKO JEŚLI ZGODA NA ANALYTICS -->
+    <script>
+      // Sprawdź czy użytkownik zgodził się na analytics
+      const consent = localStorage.getItem('cookie_consent');
+      if (consent) {
+        const preferences = JSON.parse(consent);
+        if (preferences.analytics) {
+          // Załaduj GTM
+          (function(w,d,s,l,i){
+            w[l]=w[l]||[];
+            w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
+            var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+            j.async=true;
+            j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+            f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-TT3NTTFQ');
+        }
+      }
+    </script>
+    <!-- End Google Tag Manager -->
   </head>
   <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-TT3NTTFQ"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden">
+      </iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     <!-- quasar:entry-point -->
   </body>
 </html>

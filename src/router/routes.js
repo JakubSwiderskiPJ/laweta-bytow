@@ -6,3 +6,4 @@ const routes = [
   // { path: '/wypozyczalnia', component: LoaningPage },
 ]
 export default routes
+

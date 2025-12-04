@@ -24,11 +24,12 @@
       </div>
     </div>
 
-    <div class="thumbnail-gallery">
+    <div class="thumbnail-gallery" ref="thumbnailGallery">
       <div class="thumbnails-container">
         <button
           v-for="(img, index) in images"
           :key="index"
+          :ref="el => { if (el) thumbnailRefs[index] = el }"
           @click="activeIndex = index"
           :class="['thumbnail', { active: activeIndex === index }]"
         >
@@ -41,7 +42,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted, watch, nextTick } from 'vue'
 
 import img1 from 'assets/loaning-page-images/Filip1.jpg'
 import img2 from 'assets/loaning-page-images/Filip2.jpg'
@@ -78,21 +79,72 @@ import img34 from 'assets/loaning-page-images/Filip47.jpg'
 import img35 from 'assets/loaning-page-images/Filip48.jpg'
 import img36 from 'assets/loaning-page-images/Filip52.jpg'
 
-const images = [
+// Funkcja do losowego tasowania tablicy
+const shuffleArray = (array) => {
+  const shuffled = [...array]
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]]
+  }
+  return shuffled
+}
+
+// Oryginalna tablica zdjęć
+const originalImages = [
   img1, img2, img3, img4, img5, img6, img7, img8, img9,
   img12, img13, img14, img15, img16, img17, img18,
   img19, img20, img21, img22, img23, img24, img25, img26, img27,
   img28, img29, img30, img31, img32, img33, img34, img35, img36
 ]
+
+// Wymieszane zdjęcia przy załadowaniu strony
+const images = shuffleArray(originalImages)
+
 const activeIndex = ref(0)
+const thumbnailGallery = ref(null)
+const thumbnailRefs = ref([])
 let autoplayInterval = null
 
-const nextSlide = () => {
-  activeIndex.value = (activeIndex.value + 1) % images.length
+// Funkcja do przewijania do aktywnego thumbnaiła
+const scrollToActiveThumbnail = () => {
+  nextTick(() => {
+    const activeThumbnail = thumbnailRefs.value[activeIndex.value]
+    const gallery = thumbnailGallery.value
+
+    if (activeThumbnail && gallery) {
+      const thumbnailRect = activeThumbnail.getBoundingClientRect()
+      const galleryRect = gallery.getBoundingClientRect()
+
+      // Oblicz pozycję do przewinięcia (wyśrodkuj thumbnail)
+      const scrollLeft = activeThumbnail.offsetLeft - (gallery.clientWidth / 2) + (thumbnailRect.width / 2)
+
+      // Płynne przewijanie
+      gallery.scrollTo({
+        left: scrollLeft,
+        behavior: 'smooth'
+      })
+    }
+  })
 }
 
+// Autoplay pokazuje LOSOWE zdjęcie (różne od aktualnego)
+const nextSlide = () => {
+  let newIndex
+  do {
+    newIndex = Math.floor(Math.random() * images.length)
+  } while (newIndex === activeIndex.value && images.length > 1)
+
+  activeIndex.value = newIndex
+}
+
+// Poprzednie też losowe (różne od aktualnego)
 const prevSlide = () => {
-  activeIndex.value = (activeIndex.value - 1 + images.length) % images.length
+  let newIndex
+  do {
+    newIndex = Math.floor(Math.random() * images.length)
+  } while (newIndex === activeIndex.value && images.length > 1)
+
+  activeIndex.value = newIndex
 }
 
 const startAutoplay = () => {
@@ -107,8 +159,14 @@ const stopAutoplay = () => {
   }
 }
 
+// Watch activeIndex i przewijaj do aktywnego thumbnaiła
+watch(activeIndex, () => {
+  scrollToActiveThumbnail()
+})
+
 onMounted(() => {
   startAutoplay()
+  scrollToActiveThumbnail() // Początkowe przewinięcie
 })
 
 onUnmounted(() => {
@@ -117,6 +175,7 @@ onUnmounted(() => {
 </script>
 
 <style scoped lang="scss">
+// Cały CSS pozostaje bez zmian
 .hero-gallery-section {
   max-width: 1400px;
   margin: 0 auto;
@@ -141,10 +200,10 @@ onUnmounted(() => {
   position: relative;
   width: 100%;
   height: 0;
-  padding-bottom: 75%; /* 4:3 aspect ratio for 1200x900 photos */
+  padding-bottom: 75%;
 
   @media (max-width: 768px) {
-    padding-bottom: 75%; /* Keep 4:3 on mobile too */
+    padding-bottom: 75%;
   }
 }
 
@@ -154,7 +213,7 @@ onUnmounted(() => {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: contain; /* Changed from cover to contain - shows full image */
+  object-fit: contain;
   transition: transform 0.3s ease;
 }
 
@@ -229,6 +288,7 @@ onUnmounted(() => {
   -webkit-overflow-scrolling: touch;
   scrollbar-width: thin;
   scrollbar-color: #ccc transparent;
+  scroll-behavior: smooth; // Dodano dla płynnego przewijania
 
   &::-webkit-scrollbar {
     height: 6px;
@@ -262,7 +322,7 @@ onUnmounted(() => {
   position: relative;
   flex-shrink: 0;
   width: 180px;
-  height: 135px; /* Changed to maintain 4:3 ratio (180 * 0.75) */
+  height: 135px;
   border-radius: 12px;
   overflow: hidden;
   border: 3px solid transparent;
@@ -273,7 +333,7 @@ onUnmounted(() => {
 
   @media (max-width: 768px) {
     width: 120px;
-    height: 90px; /* Maintain 4:3 ratio (120 * 0.75) */
+    height: 90px;
   }
 
   img {

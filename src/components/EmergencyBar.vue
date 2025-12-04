@@ -87,7 +87,6 @@ const trackCall = () => {
 
   @media (max-width: 1024px) {
     flex-direction: column;
-    gap: 24px;
     min-height: auto;
   }
 }
@@ -101,10 +100,12 @@ const trackCall = () => {
   z-index: 1;
 
   @media (max-width: 1024px) {
-    position: relative;
-    transform: none;
-    left: auto;
-    top: auto;
+    // Usuń position: relative - zostaw absolute
+    top: 0;
+    transform: translateY(0);
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 16px; // usuń to jeśli nie potrzebujesz
   }
 }
 
@@ -116,17 +117,17 @@ const trackCall = () => {
   filter: brightness(0) invert(1) drop-shadow(0 2px 8px rgba(0, 0, 0, 0.2));
 
   @media (max-width: 1024px) {
-    height: 50px;
-    max-width: 150px;
+    height: 100px; // zwiększ tutaj jak potrzebujesz
+    max-width: 200px; // i tutaj
   }
 
   @media (max-width: 480px) {
-    height: 40px;
-    max-width: 120px;
+    height: 90px; // lub więcej
+    max-width: 180px;
   }
 }
 
-// Tekst i przycisk zawsze na środku
+// Dodaj padding-top do emergency-text na mobile, żeby tekst nie nakładał się na logo
 .emergency-text {
   display: flex;
   flex-direction: column;
@@ -137,6 +138,7 @@ const trackCall = () => {
 
   @media (max-width: 1024px) {
     width: 100%;
+    padding-top: 110px; // dostosuj do wysokości logo + margines
   }
 }
 

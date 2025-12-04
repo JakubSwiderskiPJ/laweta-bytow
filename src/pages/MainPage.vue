@@ -11,6 +11,8 @@
       <MapSection  />
       <VatSection/>
       <FooterSection/>
+      <CookieBanner @open-privacy-policy="showPrivacyPolicy = true" />
+            <PrivacyPolicyModal v-model="showPrivacyPolicy" />
 
     </div>
   </div>
@@ -22,6 +24,12 @@ import MainPageCardComponent from 'components/MainPageCardComponent.vue'
 import FooterSection from 'components/FooterSection.vue'
 import MapSection from 'components/MapSection.vue'
 import VatSection from 'components/VatSection.vue'
+import CookieBanner from 'components/CookieBanner.vue'
+import PrivacyPolicyModal from 'components/PrivacyPolicyModal.vue'
+import { ref } from 'vue'
+
+const showPrivacyPolicy = ref(false)
+
 </script>
 
 <style lang="scss" scoped>
