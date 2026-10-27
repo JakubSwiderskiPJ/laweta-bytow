@@ -10,21 +10,18 @@
         </div>
         <div>
           <h2 class="map-title">Nasza lokalizacja</h2>
-          <p class="map-subtitle">Zalesie 15
-77-121 Pomysk Wielki</p>
+          <p class="map-subtitle">Zalesie 15<br/>77-121 Pomysk Wielki</p>
         </div>
       </div>
 
       <div class="map-wrapper">
-        <GoogleMap
-          api-key="AIzaSyCyHNuZpx-HPfEqjt_Nf98vifPRmIOP1aY"
-          mapId="DEMO_MAP_ID"
-          style="width: 100%; height: 100%; border-radius: 12px;"
-          :center="center"
-          :zoom="15"
-        >
-          <AdvancedMarker :options="{ position: center, title: 'CHMIELEWSKI TRANSPORT' }" />
-        </GoogleMap>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2333.6022670659586!2d17.532316877112592!3d54.20482611014443!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47020800fcb6019d%3A0xfb1f9a25176d56f2!2sZalesie%2015%2C%2077-121%20Pomysk%20Wielki!5e0!3m2!1spl!2spl!4v1765912961202!5m2!1spl!2spl"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Mapa Google - FM Chmielewski Laweta Bytów">
+        </iframe>
       </div>
 
       <div class="map-info">
@@ -50,15 +47,7 @@
       </div>
     </div>
   </div>
-
 </template>
-
-<script setup>
-import { GoogleMap, AdvancedMarker } from 'vue3-google-map'
-import { ref } from 'vue'
-
-const center = ref({ lat: 54.204856, lng: 17.534873 })
-</script>
 
 <style scoped lang="scss">
 .map-section-wrapper {
@@ -134,6 +123,7 @@ const center = ref({ lat: 54.204856, lng: 17.534873 })
   font-size: 1rem;
   color: #666;
   margin: 0;
+  line-height: 1.4;
 
   @media (max-width: 768px) {
     font-size: 0.95rem;
@@ -147,6 +137,14 @@ const center = ref({ lat: 54.204856, lng: 17.534873 })
   overflow: hidden;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
   margin-bottom: 24px;
+  position: relative;
+
+  iframe {
+    width: 100% !important;
+    height: 100% !important;
+    border: none !important;
+    display: block;
+  }
 
   @media (max-width: 768px) {
     height: 350px;

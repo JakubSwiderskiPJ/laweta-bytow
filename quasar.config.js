@@ -5,6 +5,17 @@ import { defineConfig } from '#q-app/wrappers'
 import vue from '@vitejs/plugin-vue'
 export default defineConfig((/* ctx */) => {
   return {
+     htmlVariables: {
+      ogTitle: 'Chmielewski Transport - Pomoc Drogowa 24/7',
+      ogDescription: 'Profesjonalna pomoc drogowa na terenie całej Polski. Dostępni 24/7. Zaufany partner w trudnych sytuacjach.',
+      ogImage: 'https://twoja-domena.pl/og-image.jpg',
+      ogUrl: 'https://twoja-domena.pl',
+
+      twitterCard: 'summary_large_image',
+      twitterTitle: 'Chmielewski Transport - Pomoc Drogowa 24/7',
+      twitterDescription: 'Profesjonalna pomoc drogowa 24/7',
+      twitterImage: 'https://twoja-domena.pl/twitter-image.jpg',
+    },
     // https://v2.quasar.dev/quasar-cli-vite/prefetch-feature
     // preFetch: true,
 
@@ -37,7 +48,7 @@ export default defineConfig((/* ctx */) => {
         node: 'node20',
       },
 
-      vueRouterMode: 'hash', // available values: 'hash', 'history'
+      vueRouterMode: 'history', // ZMIENIONE: 'hash' → 'history' (usuwa #/ z URL)
       // vueRouterBase,
       // vueDevtools,
       // vueOptionsAPI: false,

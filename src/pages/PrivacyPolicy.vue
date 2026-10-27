@@ -19,7 +19,7 @@
 
       <section>
         <h2>2. Jakie dane zbieramy i w jakim celu</h2>
-        
+
         <h3>2.1. Dane zbierane automatycznie</h3>
         <p>Podczas korzystania ze strony automatycznie zbieramy następujące dane techniczne:</p>
         <ul>
@@ -34,70 +34,89 @@
         <p><strong>Podstawa prawna:</strong> Zgoda użytkownika (art. 6 ust. 1 lit. a RODO) lub uzasadniony interes administratora (art. 6 ust. 1 lit. f RODO).</p>
 
         <h3>2.2. Dane kontaktowe</h3>
-        <p>Jeśli skontaktujesz się z nami telefonicznie lub mailowo, przetwarzamy:</p>
-        <ul>
-          <li>Imię i nazwisko</li>
-          <li>Numer telefonu</li>
-          <li>Adres email</li>
-          <li>Treść wiadomości</li>
-        </ul>
-        <p><strong>Cel przetwarzania:</strong> Odpowiedź na zapytanie, realizacja usługi transportowej, kontakt handlowy.</p>
-        <p><strong>Podstawa prawna:</strong> Zgoda użytkownika (art. 6 ust. 1 lit. a RODO) lub wykonanie umowy (art. 6 ust. 1 lit. b RODO).</p>
+<p>Dane przekazywane podczas kontaktu telefonicznego lub mailowego są przetwarzane wyłącznie w celu obsługi zapytania.</p>
+<p>Jeśli skontaktujesz się z nami, przetwarzamy:</p>
+<ul>
+  <li>Imię i nazwisko (opcjonalnie)</li>
+  <li>Numer telefonu</li>
+  <li>Adres email</li>
+  <li>Treść wiadomości</li>
+</ul>
+<p><strong>Cel przetwarzania:</strong> Odpowiedź na zapytanie, realizacja usługi transportowej, kontakt handlowy.</p>
+<p><strong>Podstawa prawna:</strong> Zgoda użytkownika (art. 6 ust. 1 lit. a RODO) lub wykonanie umowy (art. 6 ust. 1 lit. b RODO).</p>
       </section>
 
-      <section>
-        <h2>3. Pliki cookies i narzędzia analityczne</h2>
-        
-        <h3>3.1. Czym są cookies?</h3>
-        <p>Cookies to małe pliki tekstowe zapisywane na Twoim urządzeniu podczas odwiedzania strony internetowej. Pozwalają one rozpoznać Twoje urządzenie przy kolejnych wizytach.</p>
+     <section>
+  <h2>3. Pliki cookies i narzędzia analityczne</h2>
 
-        <h3>3.2. Jakie cookies używamy?</h3>
-        
-        <div class="cookie-type">
-          <h4>🔹 Cookies niezbędne</h4>
-          <p>Wymagane do prawidłowego działania strony. Nie można ich wyłączyć.</p>
-          <ul>
-            <li><strong>cookie_consent</strong> - przechowuje Twoje preferencje dotyczące cookies</li>
-          </ul>
-        </div>
+  <h3>3.1. Czym są cookies?</h3>
+  <p>Cookies to małe pliki tekstowe zapisywane na Twoim urządzeniu podczas odwiedzania strony internetowej. Pozwalają one rozpoznać Twoje urządzenie przy kolejnych wizytach.</p>
 
-        <div class="cookie-type">
-          <h4>🔹 Cookies analityczne (Google Analytics)</h4>
-          <p>Pomagają nam zrozumieć, jak korzystasz ze strony.</p>
-          <ul>
-            <li><strong>_ga</strong> - identyfikuje unikalnych użytkowników (ważność: 2 lata)</li>
-            <li><strong>_ga_*</strong> - przechowuje informacje o sesji (ważność: 2 lata)</li>
-            <li><strong>_gid</strong> - rozróżnia użytkowników (ważność: 24 godziny)</li>
-          </ul>
-          <p><strong>Zbierane dane:</strong> Adres IP (anonimizowany), przeglądarka, system operacyjny, czas wizyty, odwiedzone strony.</p>
-          <p><strong>Dostawca:</strong> Google LLC, USA</p>
-        </div>
+  <h3>3.2. Jakie cookies używamy?</h3>
 
-        <div class="cookie-type">
-          <h4>🔹 Cookies funkcjonalne</h4>
-          <p>Zapamiętują Twoje preferencje (np. język strony).</p>
-        </div>
+  <div class="cookie-type">
+    <h4>🔹 Cookies niezbędne</h4>
+    <p>Wymagane do prawidłowego działania strony. Nie można ich wyłączyć.</p>
+    <ul>
+      <li><strong>cookie_consent</strong> - przechowuje Twoje preferencje dotyczące cookies</li>
+    </ul>
+  </div>
 
-        <h3>3.3. Jak zarządzać cookies?</h3>
-        <p>Możesz w każdej chwili zmienić ustawienia cookies:</p>
-        <ul>
-          <li>Klikając przycisk "Ustawienia cookies" na dole strony</li>
-          <li>W ustawieniach swojej przeglądarki:
-            <ul>
-              <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener">Google Chrome</a></li>
-              <li><a href="https://support.mozilla.org/pl/kb/wzmocniona-ochrona-przed-sledzeniem-firefox-desktop" target="_blank" rel="noopener">Firefox</a></li>
-              <li><a href="https://support.microsoft.com/pl-pl/microsoft-edge/usuwanie-plik%C3%B3w-cookie-w-przegl%C4%85darce-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" target="_blank" rel="noopener">Microsoft Edge</a></li>
-              <li><a href="https://support.apple.com/pl-pl/guide/safari/sfri11471/mac" target="_blank" rel="noopener">Safari</a></li>
-            </ul>
-          </li>
-        </ul>
-        <p><strong>Uwaga:</strong> Wyłączenie cookies może wpłynąć na funkcjonalność strony.</p>
-      </section>
+  <div class="cookie-type">
+    <h4>🔹 Cookies analityczne (Google Analytics 4)</h4>
+    <p>Pomagają nam zrozumieć, jak korzystasz ze strony.</p>
+    <p>Google Analytics 4 wykorzystuje pliki cookies oraz technologie podobne do cookies (np. identyfikatory zdarzeń), które umożliwiają analizę ruchu na stronie.</p>
+
+    <p><strong>Dane zbierane przez GA4 mogą obejmować m.in.:</strong></p>
+    <ul>
+      <li>informacje o urządzeniu i przeglądarce,</li>
+      <li>przybliżoną lokalizację,</li>
+      <li>zachowanie na stronie,</li>
+      <li>czas wizyty i interakcje.</li>
+    </ul>
+
+    <p><strong>Zgody użytkownika są przekazywane do Google w postaci sygnałów (Consent Mode v2), co wpływa na sposób przetwarzania danych analitycznych i reklamowych.</strong></p>
+
+    <p><strong>Dostawca:</strong> Google LLC, USA</p>
+    <p><strong>Więcej informacji:</strong> <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Polityka prywatności Google</a></p>
+  </div>
+
+  <div class="cookie-type">
+    <h4>🔹 Cookies reklamowe (Google Ads)</h4>
+    <p>Strona może korzystać z Google Ads w celu pomiaru skuteczności reklam. Dane te są przetwarzane wyłącznie po uzyskaniu zgody użytkownika i zgodnie z ustawieniami cookies.</p>
+    <p><strong>Cel:</strong> Pomiar efektywności kampanii reklamowych i optymalizacja reklam.</p>
+    <p><strong>Dostawca:</strong> Google LLC, USA</p>
+  </div>
+
+  <div class="cookie-type">
+    <h4>🔹 Cookies funkcjonalne</h4>
+    <p>Zapamiętują Twoje preferencje (np. język strony).</p>
+  </div>
+
+  <h3>3.3. Google Consent Mode v2</h3>
+  <p>Strona korzysta z mechanizmu <strong>Google Consent Mode v2</strong>, który respektuje wybory użytkownika dotyczące zgód na cookies.</p>
+  <p>Zgody użytkownika są przekazywane do Google w postaci sygnałów (Consent Mode v2), co wpływa na sposób przetwarzania danych analitycznych i reklamowych.</p>
+
+  <h3>3.4. Jak zarządzać cookies?</h3>
+  <p>Możesz w każdej chwili zmienić ustawienia cookies:</p>
+  <ul>
+    <li><strong>Klikając przycisk "Ustawienia cookies"</strong> na dole strony lub w bannerze cookies</li>
+    <li>W ustawieniach swojej przeglądarki:
+      <ul>
+        <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener">Google Chrome</a></li>
+        <li><a href="https://support.mozilla.org/pl/kb/wzmocniona-ochrona-przed-sledzeniem-firefox-desktop" target="_blank" rel="noopener">Firefox</a></li>
+        <li><a href="https://support.microsoft.com/pl-pl/microsoft-edge/usuwanie-plik%C3%B3w-cookie-w-przegl%C4%85darce-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" target="_blank" rel="noopener">Microsoft Edge</a></li>
+        <li><a href="https://support.apple.com/pl-pl/guide/safari/sfri11471/mac" target="_blank" rel="noopener">Safari</a></li>
+      </ul>
+    </li>
+  </ul>
+  <p><strong>Uwaga:</strong> Wyłączenie cookies może wpłynąć na funkcjonalność strony.</p>
+</section>
 
       <section>
         <h2>4. Przekazywanie danych osobowych</h2>
         <p>Twoje dane mogą być przekazywane następującym podmiotom:</p>
-        
+
         <div class="info-box">
           <h4>Google LLC (Google Analytics, Google Tag Manager)</h4>
           <p><strong>Siedziba:</strong> USA</p>
@@ -170,11 +189,11 @@
       </section>
 
       <div class="back-link">
-        <q-btn 
-          flat 
-          color="red" 
-          label="← Wróć do strony głównej" 
-          to="/" 
+        <q-btn
+          flat
+          color="red"
+          label="← Wróć do strony głównej"
+          to="/"
         />
       </div>
     </div>
@@ -184,7 +203,7 @@
 <script>
 export default {
   name: 'PrivacyPolicy',
-  
+
   data() {
     return {
       currentDate: new Date().toLocaleDateString('pl-PL', {
@@ -244,7 +263,21 @@ h1 {
 section {
   margin-bottom: 40px;
 }
+.cookie-notice {
+  background: #3d3d3d;
+  border-left: 3px solid #FFA500;
+  padding: 15px;
+  margin: 15px 0;
+  border-radius: 4px;
+}
 
+.cookie-notice code {
+  background: #4d4d4d;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-family: 'Courier New', monospace;
+  color: #FFA500;
+}
 h2 {
   font-size: 1.8rem;
   color: #C41E3A;

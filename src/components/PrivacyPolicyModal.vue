@@ -34,84 +34,88 @@
 
           <section>
             <h2>2. Zakres przetwarzanych danych</h2>
-            <p>W ramach korzystania ze strony mogą być przetwarzane:</p>
+
+            <h3>2.1. Dane zbierane automatycznie</h3>
+            <p>Podczas korzystania ze strony automatycznie zbieramy następujące dane techniczne:</p>
             <ul>
-              <li>dane techniczne dotyczące wizyty na stronie (adres IP, rodzaj urządzenia, przeglądarka itp.),</li>
-              <li>dane zbierane przez pliki cookies, Google Tag Manager i Google Analytics.</li>
+              <li>Adres IP (anonimizowany)</li>
+              <li>Typ przeglądarki i system operacyjny</li>
+              <li>Rozdzielczość ekranu urządzenia</li>
+              <li>Czas spędzony na stronie</li>
+              <li>Odwiedzone podstrony</li>
+              <li>Źródło wejścia na stronę (np. wyszukiwarka Google)</li>
             </ul>
-            <p>
-              Nie stosujemy formularza kontaktowego — kontakt odbywa się wyłącznie mailowo lub telefonicznie,
-              dlatego dane podane podczas kontaktu są przetwarzane wyłącznie w celu obsługi zapytania lub realizacji usługi.
-            </p>
+            <p><strong>Cel przetwarzania:</strong> Analiza ruchu na stronie, ulepszanie funkcjonalności i doświadczeń użytkowników.</p>
+            <p><strong>Podstawa prawna:</strong> Zgoda użytkownika (art. 6 ust. 1 lit. a RODO) lub uzasadniony interes administratora (art. 6 ust. 1 lit. f RODO).</p>
+
+            <h3>2.2. Dane kontaktowe</h3>
+            <p>Dane przekazywane podczas kontaktu telefonicznego lub mailowego są przetwarzane wyłącznie w celu obsługi zapytania.</p>
+            <p>Jeśli skontaktujesz się z nami, przetwarzamy:</p>
+            <ul>
+              <li>Imię i nazwisko (opcjonalnie)</li>
+              <li>Numer telefonu</li>
+              <li>Adres email</li>
+              <li>Treść wiadomości</li>
+            </ul>
+            <p><strong>Cel przetwarzania:</strong> Odpowiedź na zapytanie, realizacja usługi transportowej, kontakt handlowy.</p>
+            <p><strong>Podstawa prawna:</strong> Zgoda użytkownika (art. 6 ust. 1 lit. a RODO) lub wykonanie umowy (art. 6 ust. 1 lit. b RODO).</p>
           </section>
 
           <section>
-            <h2>3. Cele i podstawy prawne przetwarzania danych</h2>
-            <p>Dane przetwarzane są w następujących celach:</p>
+            <h2>3. Pliki cookies i narzędzia analityczne</h2>
 
-            <h3>a) Realizacja usług pomocy drogowej oraz obsługa zapytań</h3>
-            <p><strong>Podstawa prawna:</strong> art. 6 ust. 1 lit. b RODO (wykonanie umowy lub działania przed zawarciem umowy).</p>
+            <h3>3.1. Czym są cookies?</h3>
+            <p>Cookies to małe pliki tekstowe zapisywane na Twoim urządzeniu podczas odwiedzania strony internetowej. Pozwalają one rozpoznać Twoje urządzenie przy kolejnych wizytach.</p>
 
-            <h3>b) Wypełnienie obowiązków księgowych, podatkowych i prawnych</h3>
-            <p><strong>Podstawa prawna:</strong> art. 6 ust. 1 lit. c RODO (obowiązek prawny).</p>
-
-            <h3>c) Statystyka i analiza działania strony (Google Analytics)</h3>
-            <p><strong>Podstawa prawna:</strong> art. 6 ust. 1 lit. a RODO (zgoda użytkownika, wyrażana poprzez baner cookies).</p>
-
-            <h3>d) Utrzymanie prawidłowego funkcjonowania strony (cookies techniczne)</h3>
-            <p><strong>Podstawa prawna:</strong> art. 6 ust. 1 lit. f RODO (prawnie uzasadniony interes administratora).</p>
-          </section>
-
-          <section>
-            <h2>4. Pliki cookies</h2>
-            <p>Strona używa plików cookies w celu:</p>
-            <ul>
-              <li>zapewnienia prawidłowego działania strony,</li>
-              <li>tworzenia statystyk (Google Analytics),</li>
-              <li>dostosowania treści do preferencji użytkownika.</li>
-            </ul>
-
-            <p>
-              <strong>Strona korzysta z mechanizmu Google Consent Mode v2</strong>, który respektuje wybory użytkownika
-              dotyczące zgód na cookies.
-            </p>
-
-            <p>
-              Cookies można wyłączyć w ustawieniach przeglądarki lub poprzez banner cookies na stronie,
-              jednak może to wpłynąć na prawidłowe funkcjonowanie strony.
-            </p>
+            <h3>3.2. Jakie cookies używamy?</h3>
 
             <div class="cookie-type">
-              <h4>🔹 Rodzaje cookies używanych na stronie:</h4>
-
-              <div style="margin-top: 15px;">
-                <strong>Cookies niezbędne</strong>
-                <p>Wymagane do prawidłowego działania strony. Nie można ich wyłączyć.</p>
-                <ul>
-                  <li><strong>cookie_consent</strong> - przechowuje Twoje preferencje dotyczące cookies</li>
-                </ul>
-              </div>
-
-              <div style="margin-top: 15px;">
-                <strong>Cookies analityczne (Google Analytics)</strong>
-                <p>Pomagają nam zrozumieć, jak korzystasz ze strony.</p>
-                <ul>
-                  <li><strong>_ga</strong> - identyfikuje unikalnych użytkowników (ważność: 2 lata)</li>
-                  <li><strong>_ga_*</strong> - przechowuje informacje o sesji (ważność: 2 lata)</li>
-                  <li><strong>_gid</strong> - rozróżnia użytkowników (ważność: 24 godziny)</li>
-                </ul>
-              </div>
-
-              <div style="margin-top: 15px;">
-                <strong>Cookies funkcjonalne</strong>
-                <p>Zapamiętują Twoje preferencje (np. język strony).</p>
-              </div>
+              <h4>🔹 Cookies niezbędne</h4>
+              <p>Wymagane do prawidłowego działania strony. Nie można ich wyłączyć.</p>
+              <ul>
+                <li><strong>cookie_consent</strong> - przechowuje Twoje preferencje dotyczące cookies</li>
+              </ul>
             </div>
 
-            <h3>Jak zarządzać cookies?</h3>
+            <div class="cookie-type">
+              <h4>🔹 Cookies analityczne (Google Analytics 4)</h4>
+              <p>Pomagają nam zrozumieć, jak korzystasz ze strony.</p>
+              <p>Google Analytics 4 wykorzystuje pliki cookies oraz technologie podobne do cookies (np. identyfikatory zdarzeń), które umożliwiają analizę ruchu na stronie.</p>
+
+              <p><strong>Dane zbierane przez GA4 mogą obejmować m.in.:</strong></p>
+              <ul>
+                <li>informacje o urządzeniu i przeglądarce,</li>
+                <li>przybliżoną lokalizację,</li>
+                <li>zachowanie na stronie,</li>
+                <li>czas wizyty i interakcje.</li>
+              </ul>
+
+              <p><strong>Zgody użytkownika są przekazywane do Google w postaci sygnałów (Consent Mode v2), co wpływa na sposób przetwarzania danych analitycznych i reklamowych.</strong></p>
+
+              <p><strong>Dostawca:</strong> Google LLC, USA</p>
+              <p><strong>Więcej informacji:</strong> <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Polityka prywatności Google</a></p>
+            </div>
+
+            <div class="cookie-type">
+              <h4>🔹 Cookies reklamowe (Google Ads)</h4>
+              <p>Strona może korzystać z Google Ads w celu pomiaru skuteczności reklam. Dane te są przetwarzane wyłącznie po uzyskaniu zgody użytkownika i zgodnie z ustawieniami cookies.</p>
+              <p><strong>Cel:</strong> Pomiar efektywności kampanii reklamowych i optymalizacja reklam.</p>
+              <p><strong>Dostawca:</strong> Google LLC, USA</p>
+            </div>
+
+            <div class="cookie-type">
+              <h4>🔹 Cookies funkcjonalne</h4>
+              <p>Zapamiętują Twoje preferencje (np. język strony).</p>
+            </div>
+
+            <h3>3.3. Google Consent Mode v2</h3>
+            <p>Strona korzysta z mechanizmu <strong>Google Consent Mode v2</strong>, który respektuje wybory użytkownika dotyczące zgód na cookies.</p>
+            <p>Zgody użytkownika są przekazywane do Google w postaci sygnałów (Consent Mode v2), co wpływa na sposób przetwarzania danych analitycznych i reklamowych.</p>
+
+            <h3>3.4. Jak zarządzać cookies?</h3>
             <p>Możesz w każdej chwili zmienić ustawienia cookies:</p>
             <ul>
-              <li>Klikając przycisk "Ustawienia cookies" w bannerze na dole strony</li>
+              <li><strong>Klikając przycisk "Ustawienia cookies"</strong> na dole strony lub w bannerze cookies</li>
               <li>W ustawieniach swojej przeglądarki:
                 <ul>
                   <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener">Google Chrome</a></li>
@@ -121,91 +125,77 @@
                 </ul>
               </li>
             </ul>
+            <p><strong>Uwaga:</strong> Wyłączenie cookies może wpłynąć na funkcjonalność strony.</p>
           </section>
 
           <section>
-            <h2>5. Google Analytics i Google Tag Manager</h2>
-            <p>Strona korzysta z:</p>
-            <ul>
-              <li><strong>Google Tag Manager (GTM)</strong> – narzędzia do zarządzania tagami analitycznymi,</li>
-              <li><strong>Google Analytics 4 (GA4)</strong> – narzędzia analitycznego Google LLC.</li>
-            </ul>
-
-            <p>Informacje gromadzone przez Google Analytics mogą obejmować m.in.:</p>
-            <ul>
-              <li>adres IP (anonimizowany),</li>
-              <li>informacje o urządzeniu,</li>
-              <li>czas wizyty i przeglądane podstrony.</li>
-            </ul>
-
-            <p>
-              Google może przetwarzać dane na swoich serwerach (również poza UE), z zachowaniem odpowiednich
-              zabezpieczeń zgodnych z RODO.
-            </p>
+            <h2>4. Przekazywanie danych osobowych</h2>
+            <p>Twoje dane mogą być przekazywane następującym podmiotom:</p>
 
             <div class="info-box">
-              <p><strong>Dostawca:</strong> Google LLC, USA</p>
-              <p><strong>Więcej informacji:</strong> <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Polityka prywatności Google</a></p>
+              <h4>Google LLC (Google Analytics, Google Tag Manager, Google Ads)</h4>
+              <p><strong>Siedziba:</strong> USA</p>
+              <p><strong>Cel:</strong> Analiza ruchu na stronie, pomiar skuteczności reklam</p>
+              <p><strong>Podstawa:</strong> Standardowe klauzule umowne zatwierdzone przez Komisję Europejską</p>
+              <p><strong>Więcej:</strong> <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Polityka prywatności Google</a></p>
             </div>
-          </section>
 
-          <section>
-            <h2>6. Odbiorcy danych</h2>
-            <p>Dane mogą być udostępniane:</p>
-            <ul>
-              <li>firmom świadczącym usługi hostingowe i IT,</li>
-              <li>firmom księgowym współpracującym z Administratorem,</li>
-              <li>Google LLC (w zakresie korzystania z Google Analytics i Google Tag Manager),</li>
-              <li>organom państwowym — wyłącznie w sytuacjach wymaganych przepisami prawa.</li>
-            </ul>
+            <div class="info-box">
+              <h4>SEOhost (hosting strony)</h4>
+              <p><strong>Siedziba:</strong> Polska</p>
+              <p><strong>Cel:</strong> Przechowywanie danych na serwerze</p>
+            </div>
+
             <p><strong>Nie sprzedajemy Twoich danych osobowych osobom trzecim.</strong></p>
           </section>
 
           <section>
-            <h2>7. Okres przechowywania danych</h2>
-            <p>Dane przetwarzane będą przez:</p>
+            <h2>5. Okres przechowywania danych</h2>
             <ul>
-              <li>czas realizacji usługi oraz okres przedawnienia roszczeń (maks. 6 lat),</li>
-              <li>dane analityczne Google Analytics – zgodnie z ustawieniami narzędzia (zwykle 14 miesięcy),</li>
-              <li>dane księgowe – przez okres wymagany przepisami (najczęściej 5 lat).</li>
+              <li><strong>Dane z Google Analytics:</strong> 26 miesięcy (można skrócić w ustawieniach GA4)</li>
+              <li><strong>Dane kontaktowe:</strong> Do czasu realizacji usługi lub do momentu cofnięcia zgody</li>
+              <li><strong>Preferencje cookies:</strong> Do momentu zmiany ustawień przez użytkownika</li>
             </ul>
           </section>
 
           <section>
-            <h2>8. Prawa użytkownika</h2>
-            <p>Osobie, której dane dotyczą, przysługuje prawo do:</p>
+            <h2>6. Twoje prawa (RODO)</h2>
+            <p>Zgodnie z RODO masz prawo do:</p>
             <ul>
-              <li>✅ <strong>dostępu do danych</strong> - możesz poprosić o kopię przetwarzanych danych,</li>
-              <li>✅ <strong>sprostowania danych</strong> - możesz poprawić nieprawidłowe dane,</li>
-              <li>✅ <strong>usunięcia danych</strong> („prawo do bycia zapomnianym"),</li>
-              <li>✅ <strong>ograniczenia przetwarzania</strong> - możesz zażądać wstrzymania przetwarzania,</li>
-              <li>✅ <strong>przeniesienia danych</strong> - możesz otrzymać dane w formacie umożliwiającym przeniesienie,</li>
-              <li>✅ <strong>wniesienia sprzeciwu wobec przetwarzania</strong>,</li>
-              <li>✅ <strong>wycofania zgody</strong> (jeśli była udzielona) - w dowolnym momencie,</li>
-              <li>✅ <strong>złożenia skargi do Prezesa Urzędu Ochrony Danych Osobowych (UODO)</strong> - <a href="https://www.uodo.gov.pl" target="_blank" rel="noopener">www.uodo.gov.pl</a></li>
+              <li>✅ <strong>Dostępu do swoich danych</strong> - możesz poprosić o kopię przetwarzanych danych</li>
+              <li>✅ <strong>Sprostowania danych</strong> - możesz poprawić nieprawidłowe dane</li>
+              <li>✅ <strong>Usunięcia danych</strong> ("prawo do bycia zapomnianym")</li>
+              <li>✅ <strong>Ograniczenia przetwarzania</strong> - możesz zażądać wstrzymania przetwarzania</li>
+              <li>✅ <strong>Przenoszenia danych</strong> - możesz otrzymać dane w formacie umożliwiającym przeniesienie</li>
+              <li>✅ <strong>Wniesienia sprzeciwu</strong> - możesz sprzeciwić się przetwarzaniu danych</li>
+              <li>✅ <strong>Cofnięcia zgody</strong> - w dowolnym momencie, bez wpływu na zgodność z prawem wcześniejszego przetwarzania</li>
+              <li>✅ <strong>Wniesienia skargi do UODO</strong> - Urząd Ochrony Danych Osobowych (<a href="https://www.uodo.gov.pl" target="_blank" rel="noopener">www.uodo.gov.pl</a>)</li>
             </ul>
             <p>Aby skorzystać z powyższych praw, skontaktuj się z nami: <strong>fmchmielewski@gmail.com</strong></p>
           </section>
 
           <section>
-            <h2>9. Dobrowolność podania danych</h2>
-            <p>
-              Podanie danych jest dobrowolne, lecz w niektórych przypadkach konieczne do realizacji usługi lub kontaktu.
-            </p>
+            <h2>7. Bezpieczeństwo danych</h2>
+            <p>Stosujemy odpowiednie środki techniczne i organizacyjne chroniące dane przed utratą, nieuprawnionym dostępem i zniszczeniem:</p>
+            <ul>
+              <li>🔒 Szyfrowanie połączenia SSL/HTTPS</li>
+              <li>🔒 Bezpieczny hosting z backupami</li>
+              <li>🔒 Ograniczony dostęp do danych osobowych</li>
+              <li>🔒 Regularne aktualizacje zabezpieczeń</li>
+              <li>🔒 Anonimizacja adresów IP w Google Analytics</li>
+            </ul>
           </section>
 
           <section>
-            <h2>10. Zmiany w polityce prywatności</h2>
-            <p>
-              Polityka może być aktualizowana w celu dostosowania do zmian w prawie lub sposobie działania strony.
-              Aktualna wersja zawsze znajduje się na stronie internetowej.
-            </p>
+            <h2>8. Zmiany w polityce prywatności</h2>
+            <p>Polityka prywatności może być aktualizowana w celu dostosowania do zmieniających się przepisów prawnych lub sposobu przetwarzania danych.</p>
+            <p>O istotnych zmianach poinformujemy poprzez komunikat na stronie głównej.</p>
             <p><strong>Data ostatniej aktualizacji:</strong> {{ currentDate }}</p>
           </section>
 
           <section>
-            <h2>11. Kontakt</h2>
-            <p>Jeśli masz pytania dotyczące przetwarzania danych osobowych, skontaktuj się z nami:</p>
+            <h2>9. Kontakt</h2>
+            <p>Jeśli masz pytania dotyczące przetwarzania danych osobowych lub chcesz skorzystać ze swoich praw, skontaktuj się z nami:</p>
             <div class="info-box">
               <p><strong>FM Chmielewski Firma Wielobranżowa Filip Chmielewski</strong></p>
               <p>📍 ul. Zalesie 15, 77-121 Pomysk Wielki</p>

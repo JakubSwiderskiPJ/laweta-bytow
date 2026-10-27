@@ -10,9 +10,9 @@
       <MainPageCardComponent/>
       <MapSection  />
       <VatSection/>
-      <FooterSection/>
+      <FooterSection @open-privacy-policy="showPrivacyPolicy = true" />
       <CookieBanner @open-privacy-policy="showPrivacyPolicy = true" />
-            <PrivacyPolicyModal v-model="showPrivacyPolicy" />
+      <PrivacyPolicyModal v-model="showPrivacyPolicy" />
 
     </div>
   </div>

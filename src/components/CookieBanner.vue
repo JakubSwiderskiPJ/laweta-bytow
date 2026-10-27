@@ -71,109 +71,102 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'CookieBanner',
+<script setup>
+import { ref, onMounted } from 'vue'
 
-  emits: ['open-privacy-policy'],
+// Props & Emits
+const emit = defineEmits(['open-privacy-policy'])
 
-  data() {
-    return {
-      showBanner: false,
-      showSettings: false,
-      preferences: {
-        analytics: false,
-        functional: false
-      }
-    }
-  },
+// Reactive state
+const showBanner = ref(false)
+const showSettings = ref(false)
+const preferences = ref({
+  analytics: false,
+  functional: false
+})
 
-  mounted() {
-    // Sprawdź czy użytkownik już wyraził zgodę
-    const consent = localStorage.getItem('cookie_consent');
-    if (!consent) {
-      this.showBanner = true;
-    } else {
-      // Załaduj zapisane preferencje
-      const saved = JSON.parse(consent);
-      this.preferences = saved;
-      this.updateConsent(saved);
-    }
-  },
-
-  methods: {
-    openPrivacyPolicy() {
-      this.$emit('open-privacy-policy');
-    },
-
-    acceptAll() {
-      this.preferences = {
-        analytics: true,
-        functional: true
-      };
-      this.saveConsent();
-    },
-
-    rejectAll() {
-      this.preferences = {
-        analytics: false,
-        functional: false
-      };
-      this.saveConsent();
-    },
-
-    savePreferences() {
-      this.saveConsent();
-    },
-
-    saveConsent() {
-      localStorage.setItem('cookie_consent', JSON.stringify(this.preferences));
-
-      this.updateConsent(this.preferences);
-
-      this.showBanner = false;
-      this.showSettings = false;
-
-      window.location.reload();
-    },
-
-    updateConsent(preferences) {
-      // Google Consent Mode v2
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        window.dataLayer.push(arguments);
-      }
-
-      gtag('consent', 'update', {
-        'analytics_storage': preferences.analytics ? 'granted' : 'denied',
-        'functionality_storage': preferences.functional ? 'granted' : 'denied',
-        'ad_storage': 'denied',
-        'ad_user_data': 'denied',
-        'ad_personalization': 'denied'
-      });
-
-      if (preferences.analytics) {
-        this.loadGTM();
-      }
-    },
-
-    loadGTM() {
-      if (window.gtmLoaded) return;
-
-      // Google Tag Manager
-      (function(w,d,s,l,i){
-        w[l]=w[l]||[];
-        w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
-        var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
-        j.async=true;
-        j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-        f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer','GTM-TT3NTTFQ');
-
-      window.gtmLoaded = true;
-    }
+// Mounted lifecycle
+onMounted(() => {
+  // Sprawdź czy użytkownik już wyraził zgodę
+  const consent = localStorage.getItem('cookie_consent')
+  if (!consent) {
+    showBanner.value = true
+  } else {
+    // Załaduj zapisane preferencje
+    const saved = JSON.parse(consent)
+    preferences.value = saved
+    updateConsent(saved)
   }
+})
+
+// Methods
+const openPrivacyPolicy = () => {
+  emit('open-privacy-policy')
+}
+
+const acceptAll = () => {
+  preferences.value = {
+    analytics: true,
+    functional: true
+  }
+  saveConsent()
+}
+
+const rejectAll = () => {
+  preferences.value = {
+    analytics: false,
+    functional: false
+  }
+  saveConsent()
+}
+
+const savePreferences = () => {
+  saveConsent()
+}
+
+const saveConsent = () => {
+  localStorage.setItem('cookie_consent', JSON.stringify(preferences.value))
+  updateConsent(preferences.value)
+  showBanner.value = false
+  showSettings.value = false
+  window.location.reload()
+}
+
+const updateConsent = (prefs) => {
+  // Google Consent Mode v2
+  window.dataLayer = window.dataLayer || []
+  function gtag() {
+    window.dataLayer.push(arguments)
+  }
+
+  gtag('consent', 'update', {
+    'analytics_storage': prefs.analytics ? 'granted' : 'denied',
+    'functionality_storage': prefs.functional ? 'granted' : 'denied',
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied'
+  })
+
+  if (prefs.analytics) {
+    loadGTM()
+  }
+}
+
+const loadGTM = () => {
+  if (window.gtmLoaded) return
+
+  // Google Tag Manager
+  (function(w,d,s,l,i){
+    w[l]=w[l]||[]
+    w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'})
+    var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:''
+    j.async=true
+    j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl
+    f.parentNode.insertBefore(j,f)
+  })(window,document,'script','dataLayer','GTM-TT3NTTFQ')
+
+  window.gtmLoaded = true
 }
 </script>
 
@@ -316,18 +309,6 @@ export default {
   margin-top: 15px;
   padding-top: 15px;
   border-top: 1px solid #444444;
-}
-
-.cookie-footer a {
-  color: #1976d2;
-  text-decoration: none;
-  font-size: 0.9rem;
-  transition: color 0.3s ease;
-}
-
-.cookie-footer a:hover {
-  color: #ffffff;
-  text-decoration: underline;
 }
 
 .privacy-link {

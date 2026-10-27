@@ -1,10 +1,36 @@
 <!doctype html>
-<html>
+<html lang="pl">
   <head>
-    <title><%= productName %></title>
+    <!-- SEO Meta Tags -->
+    <title>Pomoc drogowa 24/7 Bytów | Laweta Bytów | FM Chmielewski</title>
+    <meta name="description" content="Profesjonalna pomoc drogowa i laweta 24/7 w Bytowie. Holowanie, transport pojazdów, wypożyczalnia przyczep. FM Chmielewski - szybko, sprawnie, bezpiecznie. Tel: 535 255 605" />
+    <meta name="keywords" content="laweta Bytów, pomoc drogowa Bytów, holowanie, transport pojazdów, wypożyczalnia przyczep, FM Chmielewski, Pomysk Wielki" />
+    <meta name="author" content="FM Chmielewski Firma Wielobranżowa" />
+    <meta name="robots" content="index, follow" />
 
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://lawetabytow.pl/" />
+    <meta property="og:title" content="Pomoc drogowa 24/7 Bytów | Laweta Bytów | FM Chmielewski" />
+    <meta property="og:description" content="Profesjonalna pomoc drogowa i laweta 24/7 w Bytowie. Holowanie, transport pojazdów, wypożyczalnia przyczep. Tel: 535 255 605" />
+    <meta property="og:image" content="https://lawetabytow.pl/meta-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="pl_PL" />
+    <meta property="og:site_name" content="FM Chmielewski - Laweta Bytów" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://lawetabytow.pl/" />
+    <meta name="twitter:title" content="Pomoc drogowa 24/7 Bytów | Laweta Bytów | FM Chmielewski" />
+    <meta name="twitter:description" content="Profesjonalna pomoc drogowa i laweta 24/7 w Bytowie. Tel: 535 255 605" />
+    <meta name="twitter:image" content="https://lawetabytow.pl/meta-image.jpg" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://lawetabytow.pl/" />
+
+    <!-- Basic Meta Tags -->
     <meta charset="utf-8" />
-    <meta name="description" content="<%= productDescription %>" />
     <meta name="format-detection" content="telephone=no" />
     <meta name="msapplication-tap-highlight" content="no" />
     <meta
@@ -12,11 +38,70 @@
       content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width<% if (ctx.mode.cordova || ctx.mode.capacitor) { %>, viewport-fit=cover<% } %>"
     />
 
-    <link rel="icon" type="image/png" sizes="128x128" href="icons/favicon-128x128.png" />
-    <link rel="icon" type="image/png" sizes="96x96" href="icons/favicon-96x96.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png" />
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png" />
-    <link rel="icon" type="image/ico" href="favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="icons/favicon-48x48.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="icons/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="128x128" href="icons/favicon-128x128.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="icons/favicon-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="icons/favicon-512x512.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png" />
+    <link rel="icon" type="image/svg+xml" href="icons/favicon.svg" />
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Wypożyczalnia przyczep, lawet, busów, parking strzeżony - FM CHMIELEWSKI",
+      "alternateName": "FM Chmielewski",
+      "image": "https://lawetabytow.pl/meta-image.jpg",
+      "description": "Profesjonalna pomoc drogowa 24/7, wypożyczalnia przyczep, lawet i busów. Holowanie pojazdów, transport, parking strzeżony. Bytów i okolice.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Zalesie 15",
+        "addressLocality": "Pomysk Wielki",
+        "postalCode": "77-121",
+        "addressCountry": "PL"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "54.204826",
+        "longitude": "17.534873"
+      },
+      "telephone": "+48535255605",
+      "email": "fmchmielewski@gmail.com",
+      "url": "https://lawetabytow.pl",
+      "priceRange": "$$",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday"
+          ],
+          "opens": "08:00",
+          "closes": "18:00"
+        }
+      ],
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Bytów"
+        },
+        {
+          "@type": "City",
+          "name": "Pomysk Wielki"
+        }
+      ]
+    }
+    </script>
 
     <!-- Google Consent Mode v2 - MUSI BYĆ PRZED GTM -->
     <script>
